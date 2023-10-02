@@ -1,0 +1,186 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    color-scheme: light dark;
+    font-family: myFont, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(https://fonts.google.com/specimen/DM+Sans);
+}
+
+:root {
+    /* Primary */
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+    /* Neutral  */
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --backGround: hsl(27, 66%, 92%);
+    --fore-ground: hsl(33, 100%, 98%);
+    --dark: #223;
+}
+
+main {
+    align-items: center;
+    background-color: var(--backGround);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    height: 70%;
+    min-width: 350px;
+    width: 35%;
+}
+
+.card>* {
+    border-radius: 1.5rem;
+}
+
+.balance-bar,
+.summary {
+    align-items: center;
+    background: var(--Soft-red);
+    color: var(--backGround);
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 5%;
+    width: 100%;
+}
+
+.balance {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.ball,
+.ball::after {
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.ball {
+    background: var(--Dark-brown);
+    height: 40%;
+    position: relative;
+}
+
+.ball::after {
+    background-color: transparent;
+    border: 1px solid var(--backGround);
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: -50%;
+    width: 100%;
+}
+
+.main {
+    background-color: var(--fore-ground);
+    color: var(--Dark-brown);
+    height: 77%;
+    padding-bottom: 1rem;
+}
+
+.main h3 {
+    font-size: 1.5rem;
+    padding: 4%;
+}
+
+.chart-container {
+    align-items: end;
+    border-bottom: 2px solid var(--backGround);
+    display: flex;
+    gap: 2%;
+    height: 55%;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding-bottom: 5%;
+    text-align: center;
+    width: 90%;
+}
+
+.chart-bar {
+    color: var(--Medium-brown);
+    cursor: pointer;
+    flex: 1;
+    height: fit-content;
+}
+
+.amount {
+    background-color: var(--Dark-brown);
+    border-radius: 4px;
+    color: var(--fore-ground);
+    /* display: none; */
+    margin-bottom: 10%;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 100%;
+    padding: 8% 0;
+    visibility: hidden;
+}
+
+.chart-bar:hover .amount {
+    /* display: block; */
+    visibility: visible;
+}
+
+.bar {
+    background-color: var(--Soft-red);
+    border-radius: 5px;
+    height: 100px;
+    margin: 0 auto;
+    max-width: 80%;
+
+    &:hover {
+        opacity: .6;
+    }
+}
+
+.bar:hover {
+    opacity: .6;
+}
+
+.summary {
+    background-color: transparent;
+    margin-top: 5%;
+}
+
+.total span {
+    color: var(--Medium-brown);
+    font-size: 14px;
+}
+
+.total span+br+span {
+    color: var(--Dark-brown);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.diffrence span {
+    color: var(--Dark-brown);
+    font-weight: 700;
+    padding-left: 50%;
+}
+
+.diffrence span+br+span {
+    color: var(--Medium-brown);
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0;
+}
+
+.today {
+    background-color: var(--Cyan);
+}
